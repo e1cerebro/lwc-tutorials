@@ -1,0 +1,36 @@
+<template>
+    <lightning-card  title="Conditional Rendering IF">
+		<div class="slds-m-around_medium">
+			<template if:true={isVisible}>
+				<p>Hello world</p>
+			</template>
+			<lightning-button variant="brand" label="Toggle" title="Toggle Visibility" onclick={toggleVisibility} class="slds-m-left_x-small"></lightning-button>
+		</div>
+	</lightning-card>
+
+	<lightning-card  title="For Each Loop">
+		<div class="slds-m-around_medium">
+			<ul class="slds-has-dividers_bottom slds-has-block-links">
+				<template for:each={students} for:item="student" for:index="index">
+					<li key={student} class="slds-item">
+						<a href="#">{student}</a>
+					</li>
+				</template>
+			</ul>
+		</div>
+	</lightning-card>
+
+
+	<lightning-card  title="Iterator Loop">
+		<div class="slds-m-around_medium">
+			<ul class="slds-has-dividers_bottom slds-has-block-links">
+				<template iterator:employee={employees}>
+					<li key={employee.value.id} class="slds-item">
+						<a href="#">{employee.value.name}</a>
+					</li>
+				</template>
+			</ul>
+		</div>
+	</lightning-card>
+
+</template>
